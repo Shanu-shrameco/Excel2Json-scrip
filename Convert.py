@@ -2,11 +2,14 @@ import os
 import random
 import time
 import json
+
+import keyboard
+import pyautogui
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
-def convertData(pyautogui=None):
+def convertData():
     driver = webdriver.Chrome()
     driver.get('https://codebeautify.org/excel-to-json')
 
@@ -17,9 +20,13 @@ def convertData(pyautogui=None):
 
     time.sleep(2)
 
+    pyautogui.hotkey('ctrl', 'l')
+
     time.sleep(1)
 
     pyautogui.write("/home/shanu/codes/python/Excel2Json/separated_columns.xlsx")
+
+    time.sleep(1)
 
     pyautogui.press('enter')
     time.sleep(5)
@@ -31,13 +38,17 @@ def convertData(pyautogui=None):
 
 
     # get the output data and save it in json file
-    getData = driver.find_element(By.XPATH,'//*[@id="outputACEEditor"]/textarea')
+    driver.find_element(By.XPATH, '//*[@id="app"]/div[3]/div/div[1]/div[1]/div/button[3]').click()
 
-    getData.send_keys("heelo")
+    time.sleep(1)
 
-    print(getData.get_attribute('value'))
+    pyautogui.write("data.json")
 
-    with open("data.json", 'w') as file:
-        json.dump(getData.get_attribute('value'), file, indent=4)
+    time.sleep(1)
 
-    time.sleep(5)
+    pyautogui.press('enter')
+    time.sleep(2)
+
+
+    print("done")
+
