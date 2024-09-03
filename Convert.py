@@ -3,7 +3,7 @@ import random
 import time
 import json
 
-import keyboard
+# import keyboard
 import pyautogui
 from selenium import webdriver
 from selenium.webdriver import Keys
