@@ -24,9 +24,9 @@ def convertData():
 
     time.sleep(1)
 
-    pyautogui.write("/home/shanu/codes/python/Excel2Json/separated_columns.xlsx")
+    pyautogui.write("/home/shanu/codes/python/Excel2Json/villages_files/Aldandi.xlsx")
 
-    time.sleep(1)
+    time.sleep(2)
 
     pyautogui.press('enter')
     time.sleep(5)
@@ -38,15 +38,8 @@ def convertData():
 
 
     # get the output data and save it in json file
-    driver.find_element(By.XPATH, '//*[@id="app"]/div[3]/div/div[1]/div[1]/div/button[3]').click()
+    driver.find_element(By.XPATH, '//*/[@id="app"]/div[3]/div/div[1]/div[1]/div/button[3]').click()
 
-    time.sleep(1)
-
-    pyautogui.write("data.json")
-
-    time.sleep(1)
-
-    pyautogui.press('enter')
     time.sleep(2)
 
 
